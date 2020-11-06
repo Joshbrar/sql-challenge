@@ -1,4 +1,4 @@
-select * from department_tbl;
+--select * from department_tbl;
 -- select * from job_titles_tbl;
 -- select * from employees_tbl;
 --select * from emp_salary_tbl;
@@ -6,9 +6,10 @@ select * from department_tbl;
 --select * from dept_manager_tbl;
 
 --1. List the following details of each employee: employee number, last name, first name, sex, and salary.
--- select a.emp_no, a.l_name, a.f_name ,a.sex,  concat('$   ',  b.amount) as "Salary" 
--- from employees_tbl a ,emp_salary_tbl b
--- where a.emp_no =b.emp_no order by a.emp_no;
+ select a.emp_no as "Employee No", a.l_name as "Last Name", a.f_name as "First Name" ,  
+ Case when a.sex = 'M' then 'Male' when a.sex = 'F' then 'Female' else 'Other' end ,  concat('$  ',  b.amount) as "Salary" 
+ from employees_tbl a ,emp_salary_tbl b
+ where a.emp_no =b.emp_no order by a.emp_no;
 
 --2. List first name, last name, and hire date for employees who were hired in 1986.
 select  a.f_name , a.l_name , a.hire_dt from  employees_tbl a where  EXTRACT(YEAR FROM a.hire_dt) = '1986' order by hire_dt asc;
@@ -16,8 +17,8 @@ select  a.f_name , a.l_name , a.hire_dt from  employees_tbl a where  EXTRACT(YEA
 --3. List the manager of each department with the following information: 
 --department number, department name, the manager's employee number, last name, first name.
 
-select a.dept_id as "Department No", a.dept_name as "Department Name" , b.emp_no "Managers Empoyee No" , c.l_name as "Last Name", 
-c.f_name as "First Name" from department_tbl a, dept_manager_tbl b , employees_tbl c where 
+select a.dept_id as "Department No", a.dept_name as "Department Name" , b.emp_no "Manager''s Employee No" , c.l_name as "Manager''s Last Name", 
+c.f_name as " Manager''s First Name" from department_tbl a, dept_manager_tbl b , employees_tbl c where 
 a.dept_id =b.dept_id and b.emp_no =c.emp_no order by a.dept_name asc;
 
 --4. List the department of each employee with the following information: employee number, last name, first name,

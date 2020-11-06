@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.3-beta1" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="7"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="department_tbl" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="120" y="120"/>
+	<column name="dept_id" not-null="true">
+		<type name="char" length="4"/>
+	</column>
+	<column name="dept_name" not-null="true">
+		<type name="varchar" length="60"/>
+	</column>
+	<constraint name="department_tbl_pk" type="pk-constr" table="public.department_tbl">
+		<columns names="dept_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="job_titles_tbl" layer="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1180" y="140"/>
+	<column name="title_id" not-null="true">
+		<type name="char" length="5"/>
+	</column>
+	<column name="title_name" not-null="true">
+		<type name="varchar" length="60"/>
+	</column>
+	<constraint name="job_titles_tbl_pk" type="pk-constr" table="public.job_titles_tbl">
+		<columns names="title_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="employees_tbl" layer="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="680" y="120"/>
+	<column name="emp_no" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="title_id" not-null="true">
+		<type name="char" length="5"/>
+	</column>
+	<column name="birth_dt" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="f_name" not-null="true">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="l_name" not-null="true">
+		<type name="varchar" length="60"/>
+	</column>
+	<column name="sex" not-null="true">
+		<type name="char" length="1"/>
+	</column>
+	<column name="hire_dt" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="employees_tbl_pk" type="pk-constr" table="public.employees_tbl">
+		<columns names="emp_no" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="emp_salary_tbl" layer="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1160" y="400"/>
+	<column name="salary_id" not-null="true"
+	 identity-type="ALWAYS" start="1" increment="1">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="emp_no" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="amount" not-null="true">
+		<type name="numeric" length="10" precision="2"/>
+	</column>
+	<constraint name="em_salary_tbl_pk" type="pk-constr" table="public.emp_salary_tbl">
+		<columns names="salary_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dept_manager_tbl" layer="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="140" y="480"/>
+	<column name="mgr_id" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dept_id" not-null="true">
+		<type name="char" length="4"/>
+	</column>
+	<column name="emp_no" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="dept_manager_tbl_pk" type="pk-constr" table="public.dept_manager_tbl">
+		<columns names="mgr_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dept_employees_tbl" layer="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="680" y="500"/>
+	<column name="ID" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="emp_no" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dept_id" not-null="true">
+		<type name="char" length="4"/>
+	</column>
+	<constraint name="dept_employees_tbl_pk" type="pk-constr" table="public.dept_employees_tbl">
+		<columns names="ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<textbox name="SQL Challenge ER Diagram" layer="0" z-value="0" font-size="18">
+	<position x="680" y="20"/>
+	<comment><![CDATA[SQL Challenge ER Diagram]]></comment>
+</textbox>
+
+<constraint name="FK_title_id_employees_tbl" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.job_titles_tbl" table="public.employees_tbl">
+	<columns names="title_id" ref-type="src-columns"/>
+	<columns names="title_id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FK_emp_id_emp_salary_tbl" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.employees_tbl" table="public.emp_salary_tbl">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FK_dept_id_dept_manamger_tbl" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.department_tbl" table="public.dept_manager_tbl">
+	<columns names="dept_id" ref-type="src-columns"/>
+	<columns names="dept_id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FK_emp_no_dept_mamanger_tbl" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.employees_tbl" table="public.dept_manager_tbl">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FK_emp_no_dept_employees_tbl" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.employees_tbl" table="public.dept_employees_tbl">
+	<columns names="emp_no" ref-type="src-columns"/>
+	<columns names="emp_no" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="FK_dept_id_dept_employees" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.department_tbl" table="public.dept_employees_tbl">
+	<columns names="dept_id" ref-type="src-columns"/>
+	<columns names="dept_id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_employees_tbl_job_titles_tbl" type="relfk" layer="0"
+	 src-table="public.employees_tbl"
+	 dst-table="public.job_titles_tbl" reference-fk="FK_title_id_employees_tbl"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_dept_manager_tbl_department_tbl" type="relfk" layer="0"
+	 src-table="public.dept_manager_tbl"
+	 dst-table="public.department_tbl" reference-fk="FK_dept_id_dept_manamger_tbl"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_dept_manager_tbl_employees_tbl" type="relfk" layer="0"
+	 src-table="public.dept_manager_tbl"
+	 dst-table="public.employees_tbl" reference-fk="FK_emp_no_dept_mamanger_tbl"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="8.51615" y="-7.33992"/>
+	</label>
+</relationship>
+
+<relationship name="rel_dept_employees_tbl_employees_tbl" type="relfk" layer="0"
+	 src-table="public.dept_employees_tbl"
+	 dst-table="public.employees_tbl" reference-fk="FK_emp_no_dept_employees_tbl"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_dept_employees_tbl_department_tbl" type="relfk" layer="0"
+	 src-table="public.dept_employees_tbl"
+	 dst-table="public.department_tbl" reference-fk="FK_dept_id_dept_employees"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_em_salary_tbl_employees_tbl" type="relfk" layer="0"
+	 src-table="public.emp_salary_tbl"
+	 dst-table="public.employees_tbl" reference-fk="FK_emp_id_emp_salary_tbl"
+	 src-required="false" dst-required="true"/>
+
+</dbmodel>

@@ -4,7 +4,7 @@ SQL Challenge
 
 The Analysis for the employees for the years 1986 through 1993 have been done.
 
-## There are two sql query documents. 
+# There are two sql query documents. 
 
   # The first (Generate_Tables.sql ) file  has to be executed first. The sqls statement when ran will the create database tables , contraints like Primary keys and foreign keys etc.
 
@@ -21,4 +21,5 @@ The Analysis for the employees for the years 1986 through 1993 have been done.
   # The second (DataAnalysis_Query.sql )sql docuement is the queries that was requested from the higher management. 
 
 
-  # The ER Diagrams have also been posted. The images for the ER diagrams  are SQL_Challenge_ER_Diagram_Detailed.png and SQL_Challenge_ER_Diagram.png
+  # The ER Diagrams have also been posted. 
+      # The images for the ER diagrams  are SQL_Challenge_ER_Diagram_Detailed.png and SQL_Challenge_ER_Diagram.png

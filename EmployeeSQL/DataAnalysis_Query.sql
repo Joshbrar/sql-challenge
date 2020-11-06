@@ -37,7 +37,7 @@ where  a.emp_no = b.emp_no and b.dept_id = c.dept_id and c.dept_name ='Sales' or
 
 --7. List all employees in the Sales and Development departments, including their employee number, last name, 
 -- first name, and department name.
-select a.emp_no as "Employee No", a.l_name as "last Name", a.f_name as "First Name" , c.dept_name  as "Department Name" 
+select a.emp_no as "Employee No", a.l_name as "Last Name", a.f_name as "First Name" , c.dept_name  as "Department Name" 
 from employees_tbl a , dept_employees_tbl b , department_tbl c
 where  a.emp_no = b.emp_no and b.dept_id = c.dept_id and c.dept_name in ('Sales', 'Development') order by c.dept_name;
 

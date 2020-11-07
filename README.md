@@ -24,7 +24,7 @@ The Analysis for the employees for the years 1986 through 1993 have been done.
           Import dept_emp.csv          (Corresponding Table  - dept_employees_tbl) has a first column (ID) as primary key, remove this from the column tab during the import process , see Image emp_dept_import.png )  
 
 
-  - The second (DataAnalysis_Query.sql )sql docuement is the queries that was requested from the higher management. 
+  - The second (DataAnalysis_Query.sql )sql document contains the queries that were requested from the higher management. 
 
   - The ER Diagrams have also been posted. 
     The images for the ER diagrams  are SQL_Challenge_ER_Diagram_Detailed.png and SQL_Challenge_ER_Diagram.png

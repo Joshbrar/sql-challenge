@@ -26,7 +26,9 @@ The Analysis for the employees for the years 1986 through 1993 have been done.
     # The images for the ER diagrams  are SQL_Challenge_ER_Diagram_Detailed.png and SQL_Challenge_ER_Diagram.png
 
 # Bonus
+
 The jupyter file name is PewlettHackard_Analysis.ipynb
+
   1.Import the SQL database into Pandas. - Done . The database connection is performed and the data is loaded into the data frames.
   2.The histogram is plotted for the salary ranges.
   

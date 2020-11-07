@@ -11,12 +11,12 @@ The Analysis for the employees for the years 1986 through 1993 have been done.
 
   - The importing of the data has to be performed in the following sequence.
 
-    # Import departments.csv file  (Corresponding Table  - department_tbl )
-    # Import titles.csv file       (Corresponding Table  - job_titles_tbl )
-    # Import employees.csv         (Corresponding Table  - employees_tbl  )
-    # Import salaries.csv          (Corresponding Table  - emp_salary_tbl ) (has a first column (salary_id) as primary key, remove this from the column tab during the import process , see Image salary_import.png )  
-    # Import dept_manager.csv      (Corresponding Table  - dept_manager_tbl) (has a first column (mgr_id) as primary key, remove this from the column tab during the import process , see Image manager_import.png )  
-    # Import dept_emp.csv          (Corresponding Table  - dept_employees_tbl) has a first column (ID) as primary key, remove this from the column tab during the import process , see Image emp_dept_import.png )  
+     Import departments.csv file  (Corresponding Table  - department_tbl )
+     Import titles.csv file       (Corresponding Table  - job_titles_tbl )
+     Import employees.csv         (Corresponding Table  - employees_tbl  )
+     Import salaries.csv          (Corresponding Table  - emp_salary_tbl ) (has a first column (salary_id) as primary key, remove this from the column tab during the import process , see Image salary_import.png )  
+     Import dept_manager.csv      (Corresponding Table  - dept_manager_tbl) (has a first column (mgr_id) as primary key, remove this from the column tab during the import process , see Image manager_import.png )  
+     Import dept_emp.csv          (Corresponding Table  - dept_employees_tbl) has a first column (ID) as primary key, remove this from the column tab during the import process , see Image emp_dept_import.png )  
 
   - The second (DataAnalysis_Query.sql )sql docuement is the queries that was requested from the higher management. 
 

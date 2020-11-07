@@ -3,8 +3,7 @@ SQL Challenge
 
 
 The Analysis for the employees for the years 1986 through 1993 have been done.
-
-# There are two sql query documents. 
+ There are two sql query documents. 
 
 
   # The first (Generate_Tables.sql ) file  has to be executed first. The sqls statement when ran will the create database tables , constraints like Primary Keys and Foreign Keys etc.
